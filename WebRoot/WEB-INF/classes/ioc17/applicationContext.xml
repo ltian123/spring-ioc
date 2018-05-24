@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans
+	xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd">
+<!--  访问Properties文件  -->
+
+	<bean id="someBean" class="ioc17.SomeBean">
+		<property name="str" value="${str}"></property>
+		<property name="var" value="${var}"></property>
+	</bean>
+	
+	<bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+		<property name="location" value="classpath:ioc17/info.properties"></property>
+	</bean>
+
+</beans>

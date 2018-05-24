@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans
+	xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd">
+<!--  集合类型装配  -->
+
+	<bean id="someBean" class="ioc03.SomeBean">
+		<property name="list">
+			<list>
+				<value>a</value>
+				<value>b</value>
+				<value>c</value>
+			</list>
+		</property>
+		<property name="set">
+			<set>
+				<value>aa</value>
+				<value>bb</value>
+				<value>cc</value>
+			</set>
+		</property>
+		<property name="map">
+			<map>
+				<entry key="a">
+					<value>1</value>
+				</entry>
+				<entry key="b">
+					<value>2</value>
+				</entry>
+				<entry key="c">
+					<value>3</value>
+				</entry>
+			</map>
+		</property>
+		<property name="props">
+			<props>
+				<prop key="aa">11</prop>
+				<prop key="bb">22</prop>
+				<prop key="cc">33</prop>
+			</props>
+		</property>
+		<property name="array">
+			<list>
+				<value>aaa</value>
+				<value>bbb</value>
+				<value>ccc</value>
+			</list>
+		</property>
+	</bean>
+
+</beans>

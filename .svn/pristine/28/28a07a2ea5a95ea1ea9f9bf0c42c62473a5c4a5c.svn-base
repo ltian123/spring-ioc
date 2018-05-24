@@ -1,0 +1,20 @@
+package ioc16;
+
+import java.util.Arrays;
+
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+public class Test {
+	public static void main(String[] args) {
+		
+		ApplicationContext ac = new ClassPathXmlApplicationContext(
+				"ioc16/applicationContext.xml");
+		
+		Person person=(Person) ac.getBean("person");
+		System.out.println(person.getAddr().getProvince()+" "+person.getAddr().getCity());
+		System.out.println(person.getBirthday());
+		System.out.println(Arrays.toString(person.getHobbies()));
+		
+	}
+}

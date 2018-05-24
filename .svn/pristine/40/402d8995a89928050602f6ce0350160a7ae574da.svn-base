@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans
+	xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd">
+<!--  属性编辑  -->
+
+	<bean id="person" class="ioc16.Person">
+		<property name="addr" value="江苏省-南京市"></property>
+		<property name="birthday" value="2000年11月01日"></property>
+		<property name="hobbies" value="吃,玩,睡"></property>
+	</bean>
+	
+	<bean class="org.springframework.beans.factory.config.CustomEditorConfigurer">
+		<property name="customEditors">
+			<map>
+				<entry key="ioc16.Address">
+					<bean class="ioc16.AddressEditor"></bean>
+				</entry>
+				<entry key="java.util.Date">
+<!--					<bean class="ioc16.DateEditor">-->
+<!--						<property name="format" value="yyyy年MM月dd日"></property>-->
+<!--					</bean>-->
+
+					<bean class="org.springframework.beans.propertyeditors.CustomDateEditor"></bean>
+				</entry>
+			</map>
+		</property>
+	</bean>
+	
+</beans>

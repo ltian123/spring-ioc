@@ -1,0 +1,128 @@
+Spring
+	业务逻辑组件框架
+
+	程序结构良好
+	简化开发
+
+	开闭原则
+		对扩展开，对修改闭
+
+	高低原则
+		高内聚，低耦合
+
+Spring开发包
+	dist/
+		spring.jar
+		spring-src.zip
+		modules/spring-*.jar
+		resources/约束文件
+
+	docs/
+		api/
+		reference/
+
+	lib/
+		第三方jar包
+
+Spring主要内容
+	IOC 容器	使组件关系松散
+	AOP 容器	使应用易于扩展
+	通用支持	简化开发
+
+IOC容器
+	概念
+		IOC Inversion Of Control
+			反转控制
+
+		DI  Dependency Injection
+			依赖注入
+	
+
+	IOC容器类型
+		BeanFactory
+
+		ApplicationContext
+			扩展BeanFactory
+			实现类
+				根据配置文件位置不同
+				ClassPathXmlApplicationContext
+				FileSystemXmlApplicationContext
+				
+	配置
+		装配
+			装配的属性类型
+				简单值：8种基本类型 包装类型 String Class Resource
+
+				其他Bean引用：引用类型
+
+				集合：List Set Map Properties 数组
+
+
+		实例化
+			Bean生命周期
+			实例化->DI->初始化方法->就绪-->使用-->销毁方法->从容器中销毁
+
+			初始化/销毁
+				<bean init-method="" destroy-method=""></bean>
+
+			实例化途径
+				无参构造方法
+					<bean class=""></bean>
+
+				有参构造方法
+					<bean class="">
+						<constructor-arg></constructor-arg>
+					</bean>
+
+				静态工厂
+					<bean class="" factory-method=""></bean>
+
+				实例工厂
+					<bean factory-bean="" factory-method=""></bean>
+
+			实例化时机
+				BeanFactory
+					只能延迟实例化
+
+				ApplicationContext
+					默认预先实例化
+					
+					<bean lazy-init=""></bean>
+
+			组件的作用域
+				默认组件是单例的
+					<bean scope=""></bean>
+						singleton:单例
+						prototype:每次获得新对象
+
+		继承配置
+			<bean parent=""></bean>
+
+		容器不会实例化此Bean
+			<bean abstract="true"></bean>
+
+		自动装配
+			<bean autowire=""></bean>
+				byType			根据属性类型匹配
+				byName			根据属性名字匹配
+				constructor		根据构造器的参数类型匹配
+				autodetect		先byType，再constructor
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

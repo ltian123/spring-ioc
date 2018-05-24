@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans
+	xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd">
+<!--  继承配置  -->
+
+	<bean id="abstractBean" abstract="true">
+		<property name="some" value="abc"></property>
+	</bean>
+
+	<bean id="someBean" class="ioc10.SomeBean" parent="abstractBean"></bean>
+	
+	<bean id="otherBean" class="ioc10.OtherBean" parent="abstractBean"></bean>
+	
+<!--	<bean id="template" class="xxx.XxxTemplate"></bean>-->
+<!--	-->
+<!--	<bean id="genericDao" class="dao.impl.GenericDaoImpl" abstract="true">-->
+<!--		<property name="template" ref="template"></property>-->
+<!--	</bean>-->
+<!--	-->
+<!--	<bean id="userDao" class="dao.impl.UserDao" parent="genericDao"></bean>-->
+	
+<!--	=====================================================================================	-->
+
+	<bean id="abstractSomeBean" class="ioc10.SomeBean" abstract="true">
+		<property name="some" value="some"></property>
+	</bean>
+	
+	<bean id="someBean1" parent="abstractSomeBean">
+		<property name="other" value="other1"></property>
+	</bean>
+	
+	<bean id="someBean2" parent="abstractSomeBean">
+		<property name="other" value="other2"></property>
+	</bean>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+
+
+</beans>

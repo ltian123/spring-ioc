@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans
+	xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd">
+<!--  其他Bean引用装配  -->
+	
+<!--	<bean id="otherBean" class="ioc02.OtherBean">-->
+<!--		<property name="str" value="abc"></property>-->
+<!--	</bean>-->
+<!--	-->
+<!--	<bean id="someBean" class="ioc02.SomeBean">-->
+<!--		<property name="ob">-->
+<!--			<ref bean="otherBean"/>-->
+<!--		</property>-->
+<!--	</bean>-->
+
+
+	<bean id="otherBean" class="ioc02.OtherBean">
+		<property name="str" value="aaa"></property>
+	</bean>
+	
+	<bean id="someBean" class="ioc02.SomeBean">
+		<property name="ob" ref="otherBean"></property>
+	</bean>
+	
+</beans>
